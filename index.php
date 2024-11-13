@@ -13,7 +13,7 @@
     </header>
     
     <section id="search">
-        <form action="index.php" method="get">
+        <form action="fetch_vehicles.php" method="get">
             <input type="text" name="query" placeholder="Rechercher une voiture par marque ou modèle">
             <button type="submit">Rechercher</button>
         </form>
