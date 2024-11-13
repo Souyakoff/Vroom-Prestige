@@ -18,7 +18,7 @@ L'application sera composée de deux principales interfaces :
 
 ## 3. Fonctionnalités
 
-### 3.1 Application légère (Client)
+#### 3.1 Application légère (Client)
 
 #### 3.1.1 Recherche de véhicule
 - **Acteur** : Client
@@ -57,7 +57,7 @@ L'application sera composée de deux principales interfaces :
   - Affichage des coordonnées : adresse, numéro de téléphone, email.
   - Formulaire de contact direct pour envoyer un message à l'entreprise.
 
-### 3.2 Application lourde (Admin)
+#### 3.2 Application lourde (Admin)
 
 #### 3.2.1 Connexion en tant qu'administrateur
 - **Acteur** : Administrateur
@@ -91,12 +91,12 @@ L'application sera composée de deux principales interfaces :
 
 ## 4. Technologies Utilisées
 
-### Application Légère (Client)
+#### Application Légère (Client)
 - **Frontend** : HTML5, CSS3, TailWind, JavaScript
 - **Backend** : PHP pour le traitement des requêtes liées aux recherches et réservations des clients
 - **Base de Données** : MySQL
 
-### Application Lourde (Admin)
+#### Application Lourde (Admin)
 - **Frontend** : C# ou Python
 - **Backend** : C# ou Python
 - **Base de Données** : MySQL
