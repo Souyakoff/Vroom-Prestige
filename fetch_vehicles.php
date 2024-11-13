@@ -25,7 +25,7 @@ try {
             echo "<div class='vehicle'>";
 
             // Gestion de l'image avec une image par défaut si aucune image n'est fournie
-            $imagePath = !empty($row['Photo']) ? "images/" . htmlspecialchars($row['Photo']) : "images/default.jpg";
+            $imagePath = !empty($row['Photo']) ? htmlspecialchars($row['Photo']) : "images/default.jpg";
             echo "<img src='" . $imagePath . "' alt='" . htmlspecialchars($row['marque'] . " voiture disponible") . "'>";
             
             echo "<h3>" . htmlspecialchars($row['marque']) . " - " . htmlspecialchars($row['Couleur']) . "</h3>";
