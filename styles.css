@@ -1,12 +1,22 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
 }
 
 header, footer {
     text-align: center;
     padding: 20px;
+    background-color: #333;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1, footer p {
+    margin: 0;
 }
 
 #search {
@@ -14,16 +24,86 @@ header, footer {
     text-align: center;
 }
 
+#search input[type="text"] {
+    padding: 10px;
+    width: 50%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+}
+
 .vehicle-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 20px;
+    padding: 20px;
 }
 
 .vehicle {
-    margin: 15px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    width: 200px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     text-align: center;
+}
+
+.vehicle:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.vehicle img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+.vehicle h3 {
+    font-size: 20px;
+    margin: 10px 0;
+    color: #333;
+}
+
+.vehicle p {
+    font-size: 16px;
+    margin: 10px 0;
+    color: #555;
+}
+
+.vehicle button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+}
+
+.vehicle button:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    margin-top: 20px;
+    font-size: 14px;
+    background-color: #222;
+}
+
+@media (max-width: 768px) {
+    .vehicle {
+        width: 90%;
+    }
+
+    #search input[type="text"] {
+        width: 90%;
+    }
 }
