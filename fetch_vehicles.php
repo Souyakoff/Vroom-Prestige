@@ -6,7 +6,8 @@ try {
     $query = $pdo->prepare("
         SELECT 
             v.IdVoiture, 
-            mv.NomMarque AS marque, 
+            mv.NomMarque AS marque,
+            v.PrixAchat AS prixachat,
             v.PrixLocation AS prix, 
             v.Couleur, 
             v.Photo, 
@@ -28,6 +29,7 @@ try {
             echo "<img src='" . $imagePath . "' alt='" . htmlspecialchars($row['marque'] . " voiture disponible") . "'>";
             
             echo "<h3>" . htmlspecialchars($row['marque']) . " - " . htmlspecialchars($row['Couleur']) . "</h3>";
+            echo "<p>Prix: " . htmlspecialchars($row['prixachat']) . " €</p>";
             echo "<p>Prix: " . htmlspecialchars($row['prix']) . " € / jour</p>";
             echo "<p>Boîte: " . htmlspecialchars($row['BoiteVitesse']) . "</p>";
             echo "</div>";
