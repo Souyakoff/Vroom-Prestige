@@ -40,8 +40,7 @@ try {
 } catch (PDOException $e) {
     // Afficher un message d'erreur en cas de problème
     echo "<p>Erreur : Impossible de récupérer les données. Veuillez réessayer plus tard.</p>";
-    // Enlever le commentaire pour voir en debug:
-    // echo "<p>Détails : " . htmlspecialchars($e->getMessage()) . "</p>";
+
 }
 ?>
 
