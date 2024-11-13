@@ -4,12 +4,13 @@ body {
     font-family: 'Roboto', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, #ece9e6, #ffffff);
+    background: linear-gradient(to bottom, #ece9e6, #ffffff);
     color: #333;
     line-height: 1.6;
     overflow-x: hidden;
 }
 
+/* En-tête et pied de page */
 header, footer {
     text-align: center;
     padding: 30px;
@@ -25,6 +26,11 @@ header h1, footer p {
     margin: 0;
     font-weight: 700;
     text-transform: uppercase;
+    font-size: 2rem;
+}
+
+footer p {
+    font-size: 0.9rem;
 }
 
 nav ul {
@@ -45,15 +51,16 @@ nav ul li a {
     font-weight: bold;
     padding: 10px 20px;
     display: block;
-    transition: background 0.3s;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
 nav ul li a:hover {
     background: #1b3a4b;
     border-radius: 5px;
+    transform: scale(1.1);
 }
 
-
+/* Barre de recherche */
 #search {
     margin: 30px 0;
     text-align: center;
@@ -75,12 +82,32 @@ nav ul li a:hover {
     box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
 }
 
+#search button {
+    padding: 12px 25px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#search button:hover {
+    background: #0056b3;
+    transform: scale(1.1);
+}
+
+/* Liste des véhicules */
 .vehicle-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
     padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .vehicle {
@@ -101,19 +128,20 @@ nav ul li a:hover {
 
 .vehicle img {
     width: 100%;
-    height: auto;
+    height: 180px;
+    object-fit: cover;
     border-bottom: 1px solid #ddd;
 }
 
 .vehicle h3 {
-    font-size: 22px;
+    font-size: 1.8rem;
     margin: 15px 0;
     color: #333;
     font-weight: 500;
 }
 
 .vehicle p {
-    font-size: 18px;
+    font-size: 1.2rem;
     margin: 10px 0;
     color: #666;
     font-weight: 400;
@@ -141,49 +169,23 @@ nav ul li a:hover {
     transform: scale(0.95);
 }
 
-/* Services */
-#services ul {
-    list-style: none;
-    padding: 0;
-    margin: 20px auto;
-    max-width: 800px;
-    text-align: left;
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-#services ul li {
-    background: url('images/icon-check.svg') no-repeat left center;
-    padding-left: 30px;
-    margin-bottom: 10px;
-    font-size: 1.1em;
+.vehicle {
+    animation: fadeIn 0.6s ease-in-out;
 }
 
-/* Témoignages */
-#testimonials blockquote {
-    background-color: #f9f9f9;
-    border-left: 5px solid #007BFF;
-    margin: 20px auto;
-    padding: 10px 20px;
-    font-style: italic;
-    max-width: 800px;
-}
-
-footer {
-    margin-top: 20px;
-    font-size: 14px;
-    background: #0f0f0f;
-    color: #bbb;
-    border-top: 1px solid #444;
-}
-
-footer a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
+/* Responsivité */
 @media (max-width: 768px) {
     .vehicle {
         width: 90%;
@@ -196,15 +198,15 @@ footer a:hover {
 
 @media (max-width: 480px) {
     header h1, footer p {
-        font-size: 18px;
+        font-size: 1.5rem;
     }
-    
+
     .vehicle h3 {
-        font-size: 20px;
+        font-size: 1.5rem;
     }
 
     .vehicle p {
-        font-size: 16px;
+        font-size: 1rem;
     }
 
     #search input[type="text"] {
