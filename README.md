@@ -18,7 +18,7 @@ L'application sera composée de deux principales interfaces :
 
 ## 3. Fonctionnalités
 
-#### 3.1 Application légère (Client)
+## 3.1 Application légère (Client)
 
 #### 3.1.1 Recherche de véhicule
 - **Acteur** : Client
@@ -57,7 +57,7 @@ L'application sera composée de deux principales interfaces :
   - Affichage des coordonnées : adresse, numéro de téléphone, email.
   - Formulaire de contact direct pour envoyer un message à l'entreprise.
 
-#### 3.2 Application lourde (Admin)
+## 3.2 Application lourde (Admin)
 
 #### 3.2.1 Connexion en tant qu'administrateur
 - **Acteur** : Administrateur
@@ -91,12 +91,12 @@ L'application sera composée de deux principales interfaces :
 
 ## 4. Technologies Utilisées
 
-#### Application Légère (Client)
+## Application Légère (Client)
 - **Frontend** : HTML5, CSS3, TailWind, JavaScript
 - **Backend** : PHP pour le traitement des requêtes liées aux recherches et réservations des clients
 - **Base de Données** : MySQL
 
-#### Application Lourde (Admin)
+## Application Lourde (Admin)
 - **Frontend** : C# ou Python
 - **Backend** : C# ou Python
 - **Base de Données** : MySQL
@@ -114,7 +114,7 @@ Voici des exemples de contraintes possibles pour chaque application. Cela pourra
 
 ### 7. Contraintes
 
-#### 7.1 Application Légère (Client)
+## 7.1 Application Légère (Client)
 
 1. **Contraintes Fonctionnelles** :
    - La recherche de véhicules doit être rapide, avec une réponse en moins de 2 secondes.
@@ -137,7 +137,7 @@ Voici des exemples de contraintes possibles pour chaque application. Cela pourra
    - Conformité au RGPD, notamment pour la collecte et le stockage des données personnelles des clients.
    - Consentement explicite pour l’envoi d’emails (opt-in pour les notifications, les promotions).
 
-#### 7.2 Application Lourde (Admin)
+## 7.2 Application Lourde (Admin)
 
 1. **Contraintes Fonctionnelles** :
    - Le tableau de bord doit permettre un aperçu rapide des réservations en cours, des véhicules disponibles, et des comptes clients actifs.
