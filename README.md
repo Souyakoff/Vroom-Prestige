@@ -134,7 +134,30 @@ L'application sera composée de deux principales interfaces :
 - Mise en place d'une documentation utilisateur.
 
 ---
+## 7. Contraintes
 
+### **7.1 Contraintes Techniques**
+
+1. **Compatibilité multiplateforme** :  
+   L'application doit être accessible depuis différents types de terminaux (ordinateurs, tablettes, smartphones). Cela implique un design responsive et une compatibilité avec les principaux navigateurs (Chrome, Firefox, Safari, Edge).
+
+2. **Performance** :  
+   Les temps de chargement des pages doivent être optimisés pour offrir une expérience utilisateur fluide, notamment lors de la recherche de véhicules et la validation des réservations.
+
+3. **Sécurité des données** :  
+   - Protection des données personnelles des clients et des administrateurs.
+   - Mise en œuvre de HTTPS pour sécuriser les communications.
+   - Protection contre les attaques courantes (injections SQL, XSS, CSRF).
+   
+4. **Connexion permanente à la base de données** :  
+   L’application doit permettre un accès en temps réel à la base de données pour garantir la disponibilité des véhicules et l’exactitude des informations.
+
+### **7.2 Contraintes Organisationnelles**
+
+**Délais de réalisation** :  
+   L'application doit être livrée dans les délais prévus selon l'échéancier (12 semaines).
+
+---
 ## Conclusion
 
 Le projet "Vroom Prestige" vise à proposer une application intuitive, sécurisée et facile à utiliser, tant pour les clients cherchant à louer des véhicules de prestige que pour les administrateurs gérant les opérations.
