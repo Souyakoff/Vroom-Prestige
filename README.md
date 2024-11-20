@@ -18,7 +18,7 @@ L'application sera composée de deux principales interfaces :
 
 ## 3. Fonctionnalités
 
-## 3.1 Application légère (Client)
+### 3.1 Application légère (Client)
 
 #### 3.1.1 Recherche de véhicule
 - **Acteur** : Client
@@ -57,7 +57,7 @@ L'application sera composée de deux principales interfaces :
   - Affichage des coordonnées : adresse, numéro de téléphone, email.
   - Formulaire de contact direct pour envoyer un message à l'entreprise.
 
-## 3.2 Application lourde (Admin)
+### 3.2 Application lourde (Admin)
 
 #### 3.2.1 Connexion en tant qu'administrateur
 - **Acteur** : Administrateur
@@ -91,74 +91,49 @@ L'application sera composée de deux principales interfaces :
 
 ## 4. Technologies Utilisées
 
-## Application Légère (Client)
-- **Frontend** : HTML5, CSS3, TailWind, JavaScript
-- **Backend** : PHP pour le traitement des requêtes liées aux recherches et réservations des clients
-- **Base de Données** : MySQL
+### **Frontend** :
+- **HTML5** : Structure des pages web, compatible avec la plus part navigateurs.
+- **CSS3** : Personnalisation visuelle et mise en page.
+- **Tailwind CSS** : Framework CSS, pour créer des designs rapides et cohérents sans écrire beaucoup de CSS personnalisé.
+- **JavaScript** : Interaction et dynamisme comme la validation de formulaire et les interactions utilisateur.
 
-## Application Lourde (Admin)
-- **Frontend** : C# ou Python
-- **Backend** : C# ou Python
-- **Base de Données** : MySQL
-- **Sécurité et Authentification** : Ajout de mesures de sécurité renforcées pour l'accès admin, comme une double authentification
+### **Backend** :
+- **PHP** : Langage de script côté serveur pour gérer les requêtes et interagir avec la base de données.
+- **MySQL** : Système de gestion de base de données, pour stocker et gérer les données des véhicules, des comptes clients, et des réservations.
 
-## 5. Hébergement et Déploiement
+### **Sécurité** :
+- **PDO** : Protection contre les injections SQL grâce aux requêtes préparées.
 
-## 6. Échéancier
-- **Semaine 1-3** : Analyse des besoins et conception de l'architecture.
-- **Semaine 3** : 
-
-Voici des exemples de contraintes possibles pour chaque application. Cela pourrait t'aider à structurer les aspects techniques, fonctionnels, et réglementaires de chaque interface.
 
 ---
 
-### 7. Contraintes
+## 6. Échéancier
 
-## 7.1 Application Légère (Client)
+### **Phase 1 : Analyse des besoins et conception de l'architecture** (Semaine 1 à 3)
+- Conception de l'architecture des bases de données.
+- Élaboration des maquettes des interfaces client et administrateur.
 
-1. **Contraintes Fonctionnelles** :
-   - La recherche de véhicules doit être rapide, avec une réponse en moins de 2 secondes.
-   - Les filtres doivent être intuitifs, facilement modifiables, et doivent être appliqués sans rechargement de la page.
-   - Le formulaire de création de compte doit inclure une vérification en temps réel (ex: force du mot de passe).
-   - Le paiement en ligne doit être sécurisé et respecter les normes PCI-DSS pour la sécurité des transactions.
+### **Phase 2 : Développement du Frontend** (Semaine 4 à 6)
+- Développement des pages pour l'application légère (HTML, CSS, Tailwind).
+- Intégration des interactions dynamiques avec JavaScript.
 
-2. **Contraintes Techniques** :
-   - Compatibilité avec les navigateurs modernes (Chrome, Firefox, Safari, Edge) en versions récentes.
-   - Le site doit être responsive pour une utilisation fluide sur mobiles et tablettes.
-   - Limitation des dépendances extérieures pour garantir des temps de chargement rapides.
-   - Optimisation des images et des vidéos de présentation des véhicules pour minimiser le poids des pages.
+### **Phase 3 : Développement du Backend** (Semaine 6 à 8)
+- Développement des fonctionnalités principales : gestion des comptes, des véhicules, et des réservations.
+- Connexion avec la base de données MySQL.
 
-3. **Contraintes de Sécurité** :
-   - Utilisation de HTTPS pour toutes les pages, avec une redirection automatique pour sécuriser les connexions.
-   - Les mots de passe des clients doivent être chiffrés en base de données.
-   - Ajout d’une double authentification lors de l’inscription (via email) pour éviter les inscriptions frauduleuses.
+### **Phase 4 : Sécurité** (Semaine 8 à 9)
+- Implémentation des mécanismes de sécurité requêtes préparées avec PDO.
 
-4. **Contraintes Réglementaires** :
-   - Conformité au RGPD, notamment pour la collecte et le stockage des données personnelles des clients.
-   - Consentement explicite pour l’envoi d’emails (opt-in pour les notifications, les promotions).
 
-## 7.2 Application Lourde (Admin)
+### **Phase 5 : Tests et Validation** (Semaine 10 à 11)
+- Tests sur les deux applications (client et admin).
+- Corrections des bugs détectés.
 
-1. **Contraintes Fonctionnelles** :
-   - Le tableau de bord doit permettre un aperçu rapide des réservations en cours, des véhicules disponibles, et des comptes clients actifs.
-   - Les actions d’ajout, de modification et de suppression de données (véhicules, clients) doivent être accessibles en un minimum d'étapes.
-   - Des notifications ou alertes internes doivent être affichées pour les réservations urgentes ou les demandes spéciales.
+### **Phase 6 : Déploiement** (Semaine 12)
+- Déploiement de l'application sur le serveur.
+- Mise en place d'une documentation utilisateur.
 
-2. **Contraintes Techniques** :
-   - L’application doit être accessible uniquement via le réseau interne de Vroom Prestige (ou via VPN pour des connexions externes sécurisées).
-   - Gestion des logs pour toutes les actions administratives (ajout/suppression/modification) pour traçabilité.
-   - Limitation de l’accès simultané à un maximum de sessions par administrateur pour éviter les abus.
-
-3. **Contraintes de Sécurité** :
-   - Authentification multi-facteurs pour chaque connexion administrateur.
-   - Stockage sécurisé des données sensibles et des informations de paiement en conformité avec la norme PCI-DSS.
-   - Les mots de passe des administrateurs doivent être chiffrés avec une fonction de hachage forte (ex: bcrypt ou Argon2).
-   - Suivi des tentatives de connexion échouées avec blocage temporaire en cas de répétitions excessives.
-
-4. **Contraintes Réglementaires** :
-   - Respect du RGPD pour les données clients, notamment pour leur modification et leur suppression sur demande.
-   - Mise en place d’une politique de confidentialité pour les employés, détaillant les droits et responsabilités en matière de gestion des données.
-
+---
 
 ## Conclusion
 
