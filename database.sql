@@ -10,6 +10,7 @@ DROP TABLE IF EXISTS `Administrateur`;
 DROP TABLE IF EXISTS `Client`;
 DROP TABLE IF EXISTS `MarqueVoiture`;
 DROP TABLE IF EXISTS `Statut`;
+DROP TABLE IF EXISTS `TypeVehicule`;
 
 CREATE TABLE `Administrateur` (
   `IdAdmin` int(11) NOT NULL AUTO_INCREMENT,
@@ -64,14 +65,9 @@ CREATE TABLE `Voiture` (
   `PhotosSupplementaires` JSON DEFAULT NULL,
   `Energie` varchar(50) DEFAULT NULL,
   `Puissance` int(11) DEFAULT NULL,
-  `Kilometrage` decimal(15,2) DEFAULT NULL,
-  `PrixAchat` decimal(15,2) DEFAULT NULL,
   `PrixLocation` decimal(15,2) DEFAULT NULL,
   `Description` text DEFAULT NULL,
-  `Options` JSON DEFAULT NULL,
   `NbPlaces` int(11) DEFAULT NULL,
-  `Climatisation` boolean DEFAULT false,
-  `GPS` boolean DEFAULT false,
   `IdStatut` varchar(50) NOT NULL,
   `IdMarque` int(11) NOT NULL,
   `IdType` int(11) NOT NULL,
@@ -117,11 +113,18 @@ INSERT INTO `MarqueVoiture` (`NomMarque`, `LogoMarque`, `Description`) VALUES
 ('Ford', 'logos/ford.png', 'Constructeur américain historique'),
 ('Chevrolet', 'logos/chevrolet.png', 'Marque américaine emblématique');
 
--- Add indexes for better performance
-ALTER TABLE `Voiture` ADD INDEX `idx_prix` (`PrixLocation`);
-ALTER TABLE `Voiture` ADD INDEX `idx_annee` (`Annee`);
-ALTER TABLE `Reservation` ADD INDEX `idx_dates` (`DateDebut`, `DateFin`);
-ALTER TABLE `Client` ADD INDEX `idx_email` (`MailClient`);
+-- Add indexes for new search criteria
+ALTER TABLE `Voiture`
+ADD INDEX `idx_puissance` (`Puissance`),
+ADD INDEX `idx_nb_places` (`NbPlaces`),
+ADD INDEX `idx_prix` (`PrixLocation`),
+ADD INDEX `idx_annee` (`Annee`);
+
+ALTER TABLE `Reservation`
+ADD INDEX `idx_dates` (`DateDebut`, `DateFin`);
+
+ALTER TABLE `Client`
+ADD INDEX `idx_email` (`MailClient`);
 
 -- Create a view for available cars
 CREATE VIEW `VoituresDisponibles` AS
